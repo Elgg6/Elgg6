@@ -35,7 +35,7 @@ jobs:
                 console.log('Protection error:', e);
                 throw e;
               });
-
+              
               console.log('Required contexts:', protection.data.required_status_checks?.contexts || []);
 
               const checks = await github.rest.checks.listForRef({
@@ -46,7 +46,7 @@ jobs:
 
               console.log('All checks:', checks.data.check_runs.map(c => c.name));
 
-              const requiredChecks = checks.data.check_runs.filter(check =>
+              const requiredChecks = checks.data.check_runs.filter(check => 
                 protection.data.required_status_checks?.contexts?.includes(check.name)
               );
 
@@ -67,7 +67,7 @@ jobs:
               ].join('\n');
 
               console.log('Posting comment:', message);
-
+              
               await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
