@@ -1,4 +1,6 @@
 name: Build, Deploy and Test to Recette Environment
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:
