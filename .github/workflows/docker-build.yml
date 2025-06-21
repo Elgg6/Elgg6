@@ -135,7 +135,7 @@ jobs:
           path: |
             report_html.html
             report_md.md
-
+      
   quality-gate:
     needs: security-scan
     runs-on: ubuntu-latest
