@@ -1,8 +1,9 @@
 name: PR Gatekeeper
 on:
-  pull_request_target:
-    branches: [recette]
-    types: [opened, reopened, synchronize]
+  workflow_dispatch:
+  #pull_request_target:
+    #branches: [recette]
+    #types: [opened, reopened, synchronize]
 
 permissions:
   pull-requests: write
